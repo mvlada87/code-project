@@ -126,9 +126,13 @@ body {
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
 .heading-tertiary {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  text-transform: uppercase; }
+  text-align: center; }
+  .heading-tertiary--dark {
+    color: #101d2c; }
+  .heading-tertiary--light {
+    color: #c69963; }
 
 .paragraph {
   font-size: 1.6rem; }
@@ -260,6 +264,29 @@ body {
 .btn-text:active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 10rem;
+  max-width: 85%;
+  margin: 0 auto;
+  align-items: start; }
+
+.service {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 2.5rem; }
+  .service__icon {
+    fill: #c69963;
+    width: 4.5rem;
+    height: 4.5rem;
+    grid-row: 1/ span 2;
+    transform: translateY(-1rem); }
+  .service__text {
+    text-align: justify;
+    font-size: 1.6rem; }
 
 .card {
   perspective: 150rem;
@@ -394,6 +421,7 @@ body {
   background-image: linear-gradient(to right bottom, rgba(28, 38, 72, 0.9), rgba(16, 29, 44, 0.9)), url(../img/business.jpg);
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }

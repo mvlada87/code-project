@@ -6,6 +6,8 @@
   background-image: linear-gradient(to right bottom, rgba($color-primary-dark, 0.9), rgba($color-primary, 0.9)), url(../img/business.jpg);
   background-size: cover;
   background-position: top;
+  background-attachment: fixed;
+
   
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;

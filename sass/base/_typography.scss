@@ -76,9 +76,17 @@ body {
 }
 
 .heading-tertiary {
-  font-size: $default-font-size;
+  font-size: 1.8rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-align: center;
+
+  &--dark {
+    color: $color-primary;
+  }
+
+  &--light {
+    color: $color-secondary-light;
+  }
 }
 
 .paragraph {
