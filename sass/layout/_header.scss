@@ -2,12 +2,10 @@
 
   position: relative;
   height: 85vh;
-
   background-image: linear-gradient(to right bottom, rgba($color-primary-dark, 0.9), rgba($color-primary, 0.9)), url(../img/business.jpg);
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
-
   
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -20,8 +18,8 @@
   }
   
   @include respond(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85vh, 0 100%);
   }
 
   &__logo-box {
@@ -36,9 +34,36 @@
 
   &__text-box {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
   }
+}
+
+//scroll-down
+
+.scroll-downs {
+  margin: auto;
+  width: 3.5rem;
+  height: 5.6rem;
+}
+.mousey {
+  width: .3rem;
+  padding: 1rem 1.5rem;
+  height: 3.5rem;
+  border: .2rem solid $color-white;
+  border-radius: 2.5rem;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: .3rem;
+  height: 1rem;
+  border-radius: 25%;
+  background-color: $color-white;
+  animation-name: scroll;
+  animation-duration: 1.7s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
 }

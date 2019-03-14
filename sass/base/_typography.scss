@@ -8,12 +8,10 @@ body {
 .heading-primary {
   color: $color-secondary-light;
   text-shadow: 2px 2px 3px #000;
-  // text-transform: uppercase;
-  backface-visibility: hidden; // anim fix
+  backface-visibility: hidden;
   margin-bottom: 6rem;
 
   &--main {
-    // background-color: $color-white;
     display: block;
     font-size: 4.5rem;
     font-weight: 900;
@@ -23,13 +21,12 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out;
-
     box-shadow: 0 1rem 2rem rgba($color-black, .5);
 
     @include respond(phone) {
-      letter-spacing: 1rem;
-      font-size: 4rem;
-      line-height: 1.1;
+    letter-spacing: 1rem;
+    font-size: 4rem;
+    line-height: 1.1;
     }
   }
 
@@ -38,9 +35,7 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.25rem;
-
     animation: moveInRight 1s ease-out;
-    
     text-transform: uppercase;
     color: $color-white;
 
@@ -61,6 +56,10 @@ body {
   color: transparent;
   letter-spacing: 2px;
   transition: all .2s;
+
+  &--light {
+    background-image: linear-gradient(to right, $color-secondary-light, $color-secondary-dark);
+  }
 
   @include respond(tab-port) {
     font-size: 3rem;
@@ -95,4 +94,12 @@ body {
   &:not(:last-child) {
     margin-bottom: 3rem;
   }
+
+  &--dark-italic {
+  font-size: 1.5rem;
+  margin: .5rem 0;
+  font-style: italic;
+  text-align: center;
+  color:$color-primary;
+}
 }

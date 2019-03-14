@@ -9,7 +9,7 @@
   &__side {
 
     height: 52rem;
-    transition: all .8s ease;
+    transition: all 1.8s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -18,13 +18,19 @@
     backface-visibility: hidden; 
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
-    overflow: hidden; 
+    overflow: hidden;
 
     &--front {
       background-color: $color-white;
     }
+
+    &--dark {
+      background-color: $color-primary;
+      color: $color-secondary-light;
+    }
+
     &--back {
-      transform: rotateY(180deg); 
+      transform: rotateY(-180deg);
 
       &-1 {
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -39,7 +45,7 @@
   }
 
   &:hover &__side--front {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
   }
 
   &:hover &__side--back {
@@ -51,9 +57,9 @@
 
     background-size: cover;
       height: 23rem;
-      background-blend-mode: screen; //ne radi u IE + Edge -> slicno moze rgba u linear gradient kod background-image
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); //ne radi u IE + Edge
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      background-blend-mode: screen; 
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 85%,0 100%); 
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%,0 100%);
 
     &--1 {
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/simon-rae-741848-unsplash.jpg);
@@ -76,12 +82,13 @@
     top: 12rem;
     right: 2rem;
     width: 75%;
+
   }
 
   &__heading-span {
     padding: 1rem 1.5rem;
-    -webkit-box-decoration-break: clone; // za 2+ reci
-    box-decoration-break: clone; //kada h4 predje u drugi red, ne primenjuje se padding na obe strane vec kod prvog sa leve kod drugog ssa desne strane
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
 
     &--1 {
       background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .85), rgba($color-secondary-dark, .85));
@@ -95,18 +102,20 @@
   }
 
   &__details {
-
+    
     padding: 3rem;
 
     ul {
       list-style: none;
       width: 80%;
       margin: 0 auto;
+      
 
       li {
         text-align: center;
         font-size: 1.5rem;
         padding: 1rem;
+        
 
         &:not(:last-child) {
           border-bottom: 1px solid $color-grey-lightt-2;
@@ -115,7 +124,7 @@
     }
   }
 
-  //back side styling
+  //front side styling
 
   &__cta {
     text-align: center;
@@ -127,7 +136,6 @@
   }
 
   &__price-box {
-
     color: $color-white;
     margin-bottom: 8rem;
   }
@@ -143,21 +151,20 @@
   }
   
   @media only screen and (max-width: 56.25em), 
-    only screen and (hover: none){ //touch device
-      //funcionality
-    height: auto;
-    border-radius: 3px; 
-    background-color: $color-white;
-    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    only screen and (hover: none){ 
+      height: auto;
+      border-radius: 3px; 
+      background-color: $color-white;
+      box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
 
     &__side {
       
       height: auto;
-      position: relative; 
-      box-shadow: none; 
+      position: relative;
+      box-shadow: none;
       
       &--back {
-        transform: rotateY(0); // promena 180 > 0
+        transform: rotateY(0); 
         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
         
 
@@ -171,31 +178,37 @@
           background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
         }
       }
+
+      &--dark {
+        color: $color-grey-dark;
+        background-color: $color-white;
+        transform: scale(1);
+      }
     }
 
     &:hover &__side--front {
-      transform: rotateY(0);
+      transform: rotateY(0); 
     }
 
     .card__details {
       padding: 1rem 3rem;
     }
 
-    //front side styling
+    //back side styling
 
     &__cta {
       
-      position: relative; // absolute > relative
-      top: 0; //50% > 0
-      left: 0; //50% > 0
-      transform: translate(0); // -50%, -50% > 0
-      width: 100%; // 90% > 100%
+      position: relative; 
+      top: 0; 
+      left: 0; 
+      transform: translate(0); 
+      width: 100%; 
       padding: 7rem 4rem 4rem;
       text-align: center;
     }
 
     &__price-box {
-      margin-bottom: 3rem; // 8 > 3
+      margin-bottom: 3rem; 
     }
 
     &__price-value {

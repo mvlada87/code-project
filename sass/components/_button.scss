@@ -1,51 +1,6 @@
-//btn-header
-
-.btn-header {
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-transform: uppercase;
-    border-radius: 2px;
-    border: none;
-    background: $color-white;
-    color: #c69963; // **************promeni! + dodaj shadow
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-
-    & > * {
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        transition: all .2s;
-    }
-
-    &__visible {
-        padding: 2rem 7.5rem;
-    }
-
-    &__invisible {
-        position: absolute;
-        padding: 2rem 0;
-        left: 0;
-        top: -100%;
-    }
-
-    &:hover &__visible {
-        transform: translateY(100%);
-    }
-
-    &:hover &__invisible {
-        top: 0;
-    }
-
-    &:focus {
-        outline: none;
-        animation: pulsate 1s infinite;
-    }
-}
 
 .btn {
-  &, 
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -54,19 +9,18 @@
     display: inline-block;
     border-radius: .5rem;
     transition: all .01s;
-    
     position: relative;
-    
     font-size: $default-font-size;
 
     border: none;
     cursor: pointer;
+
+
   }
 
   &:hover{
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba($color-black, .2);
-
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -83,7 +37,7 @@
 
   &--white {
     background-color: $color-white;
-    color: $color-grey-dark;
+    color: $color-primary;
 
     &::after {
       background-color: $color-white;
@@ -92,7 +46,7 @@
 
     &--dark {
       background-color: $color-primary;
-      color: $color-white;
+      color: $color-secondary-light;
 
       &::after {
         background-color: $color-primary;
