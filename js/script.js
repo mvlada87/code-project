@@ -1,17 +1,16 @@
 var scrollVertical = 0;
-var distance = 50;
-var scrollSpeed = 6;
+var distance = 80;
+var scrollSpeed = 14;
 
 var maxTopScroll;
 
 function calcWinHeight() {
   var w = window,
     d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0];
-  maxTopScroll = Math.max(document.body.scrollHeight, document.body.offsetHeight,
-    document.documentElement.clientHeight, document.documentElement.scrollHeight,
-    document.documentElement.offsetHeight) - window.innerHeight;
+    e = d.documentElement;
+  maxTopScroll = Math.max(d.body.scrollHeight, d.body.offsetHeight,
+    e.clientHeight, d.documentElement.scrollHeight,
+    e.offsetHeight) - w.innerHeight;
 }
 
 function autoScrollTo(el) {
